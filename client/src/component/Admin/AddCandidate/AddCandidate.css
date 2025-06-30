@@ -1,0 +1,59 @@
+.form {
+  width: fit-content;
+  max-width: 90%;
+  margin: 1em auto; /* combined margin for top/bottom and center horizontally */
+  padding: 1.5em;
+  overflow: auto;
+  background-color: #f9f9f9; /* light background for contrast */
+  border-radius: 8px; /* soft rounded corners */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* subtle shadow for depth */
+}
+
+.label-ac {
+  display: block;
+  margin: 0.25em 0;
+  padding: 0.5em 0;
+  font-weight: bold; /* clearer label */
+}
+
+.input-ac {
+  display: block;
+  width: 100%; /* make inputs fully responsive */
+  max-width: 333px; /* keep your original width limit */
+  margin: 0.5em 0;
+  padding: 0.75em 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btn-add {
+  display: inline-block;
+  width: auto; /* let content define width on large screens */
+  padding: 0.75em 1.5em;
+  margin: 1em 0 0 auto; /* align to right by default */
+  background-color: #007bff; /* nice blue button */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: inline-end; /* respect your original float */
+  transition: background 0.3s ease;
+}
+
+.btn-add:hover {
+  background-color: #0056b3; /* darker on hover */
+}
+
+@media all and (max-width: 400px) {
+  .input-ac,
+  .btn-add {
+    width: 100%; /* full width on small screens */
+    max-width: 100%;
+  }
+
+  .btn-add {
+    float: inline-start; /* align to start on small screens */
+    margin: 1em 0; /* adjust margin */
+  }
+}

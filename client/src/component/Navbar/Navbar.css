@@ -1,0 +1,166 @@
+/* Base font and box-sizing */
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  box-sizing: border-box;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Navigation container */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 11vh;
+  background: linear-gradient(90deg, #4b0082, #6a0dad); /* Deep purple gradient */
+  padding: 0 2em;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Header (logo/text) with multi-color gradient text */
+nav .header {
+  font-size: 1.5em;
+  font-weight: 500; /* medium */
+  text-transform: uppercase;
+  cursor: pointer;
+
+  background: linear-gradient(
+    90deg,
+    #8e2de2, /* Purple */
+    #4a00e0, /* Deep blue */
+    #00c3ff, /* Teal blue */
+    #8e2de2 /* Loop back */
+  );
+  background-size: 200% 200%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: gradientShift 5s ease infinite;
+  transition: transform 0.2s ease;
+}
+
+nav .header:hover {
+  transform: scale(1.05);
+}
+
+/* Nav links container */
+nav .navbar-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2em;
+}
+
+/* Nav link styling */
+nav .navbar-links a {
+  font-size: 1em;
+  text-transform: capitalize;
+  position: relative;
+}
+
+/* Underline hover effect */
+nav .navbar-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #00c3ff; /* Teal underline */
+  transition: width 0.3s ease;
+}
+
+nav .navbar-links a:hover::after {
+  width: 100%;
+}
+
+nav .navbar-links a:hover,
+.nav-active {
+  color: #00ffff; /* Bright cyan on hover */
+}
+
+nav .burger-menu {
+  display: none;
+  font-size: 1.8em;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+nav .burger-menu:hover {
+  transform: rotate(90deg);
+}
+
+/* Mobile styles */
+@media all and (max-width: 777px) {
+  nav {
+    position: relative;
+  }
+
+  nav .burger-menu {
+    display: block;
+  }
+
+  nav .navbar-links {
+    flex-direction: column;
+    background: #6a0dad; /* Deep purple for mobile menu */
+    width: 60%;
+    max-width: 250px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 2em 1em;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease;
+    border-top: 3px solid #00c3ff;
+  }
+
+  nav .navbar-links li {
+    padding: 1em 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    width: 100%;
+    text-align: left;
+  }
+
+  nav .navbar-links.show {
+    transform: translateX(0);
+  }
+
+  nav .navbar-links.show li {
+    animation: slideIn 0.4s ease forwards;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
+
+/* Gradient animation for header text */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

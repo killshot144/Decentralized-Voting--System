@@ -1,0 +1,103 @@
+/* Table styling */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+th,
+td {
+  padding: 12px 8px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Container for winner section */
+.container-winner {
+  transition: all 0.75s ease;
+  background-color: #f5fffa;
+  border-radius: 12px;
+  max-width: 700px;
+  width: 95%;
+  padding: 2em;
+  margin: 2em auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: auto;
+}
+
+/* Winner slogan styling */
+.winner-slogan {
+  padding: 0.5em 0;
+  color: #f39c12; /* modern gold */
+  font-size: 1.8em;
+  font-weight: 600;
+  text-align: justify;
+  margin: 0.5em 0;
+}
+
+/* Winner info container */
+.winner-info {
+  width: 72%;
+  max-height: 150px;
+  display: inline-block;
+  margin-right: 2%;
+  overflow: auto;
+  vertical-align: top;
+}
+
+.winner-votes {
+  width: 25%;
+  display: inline-block;
+  vertical-align: top;
+  padding: 0.5em;
+  margin-left: 1%;
+  text-align: center;
+}
+
+/* Winner name tag */
+.winner-tag {
+  text-align: left;
+  color: #4a90e2; /* modern accent instead of hotpink */
+  font-weight: 600;
+  font-size: 1.1em;
+}
+
+/* Votes label */
+.votes-tag {
+  text-align: left;
+  color: #555;
+  font-weight: 500;
+}
+
+/* Vote count number */
+.vote-count {
+  margin-top: 0.5em;
+  padding: 0.2em;
+  font-size: 3em;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Responsive tweaks */
+@media all and (max-width: 750px) {
+  .container-winner {
+    padding: 1.5em;
+  }
+
+  .winner-info,
+  .winner-votes {
+    width: 100%;
+    display: block;
+    margin: 1em 0;
+    text-align: center;
+  }
+
+  .winner-tag,
+  .votes-tag {
+    text-align: center;
+  }
+}

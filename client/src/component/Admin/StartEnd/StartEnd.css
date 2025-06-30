@@ -1,0 +1,30 @@
+.start-btn {
+  display: block;
+  width: 100%;
+  max-width: 333px;
+  min-width: max-content;
+  padding: 1.2em 2em;
+  margin: 7px auto;
+  text-align: center;
+  background: linear-gradient(135deg, #4a90e2, #50a7f8);
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none; /* if it's a link styled as a button */
+}
+
+.start-btn:hover {
+  background: linear-gradient(135deg, #50a7f8, #4a90e2);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.start-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
